@@ -4,8 +4,8 @@ Donate link: https://www.buymeacoffee.com/wpscripts
 Tags: restaurant, restaurant menu, food ordering, food delivery, food pickup
 Requires PHP: 7.1
 Requires at least: 4.0
-Tested up to: 6.5
-Stable tag: 1.5.2
+Tested up to: 6.8
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,9 +132,9 @@ You can purchase the paid extension from[here](https://checkout.freemius.com/mod
 
 == Changelog ==
 
-= 1.5.2 - 26-01-2025 =
-* Fix - Updated deactivation hook to uninstall plugin if dependeny is not available
-* Freemius SDK updated to 2.10
+= 1.5.3 - 16-05-2025 =
+* Freemius SDK updated to 2.12
+* Updated WP version tag
 * minor code enhancement
 
 [See changelog for all versions](https://raw.githubusercontent.com/wpscripts/food-store/main/changelog).
@@ -142,5 +142,5 @@ You can purchase the paid extension from[here](https://checkout.freemius.com/mod
 
 == Upgrade Notice ==
 
-= 1.5.2
+= 1.5.3
 New version is available. Thank you for trying out our new features. Reach us anytime to report any bug or getting support.
