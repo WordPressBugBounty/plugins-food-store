@@ -20,7 +20,7 @@ final class FoodStore {
 	 *
 	 * @var string
 	 */
-	public $version = '1.5.4';
+	public $version = '1.5.5';
 
 	/**
 	 * The single instance of the class.
@@ -51,10 +51,10 @@ final class FoodStore {
 	 */
 	public function __construct() {
 		if ( WFS_Dependencies::is_woocommerce_active() ) {
-    		$this->define_constants();
-      		$this->includes();
-      		$this->init_hooks();
-      		do_action( 'food_store_loaded' );
+			$this->define_constants();
+			$this->includes();
+			$this->init_hooks();
+			do_action( 'food_store_loaded' );
     	} else {
 			deactivate_plugins('food-store/food-store.php');
 			add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );

@@ -86,7 +86,7 @@ class WFS_Admin {
    */
   public function wfs_hide_special_note( $hidden_items ) {
 
-    array_push( $hidden_items, '_special_note' );
+    array_push( $hidden_items, '_special_note', __( 'Special Note', 'food-store' ) );
     return $hidden_items;
   }
 }

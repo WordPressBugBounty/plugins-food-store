@@ -46,10 +46,14 @@ if ( ! class_exists( 'WFS_Admin_Settings', false ) ) :
         $settings = array();
 
         include_once dirname( __FILE__ ) . '/settings/class-wfs-settings-page.php';
+        include_once dirname( __FILE__ ) . '/settings/extensions/class-wfs-settings-extension-helper.php';
 
         $settings[] = include 'settings/class-wfs-settings-general.php';
         $settings[] = include 'settings/class-wfs-settings-services.php';
         $settings[] = include 'settings/class-wfs-settings-styling.php';
+        $settings[] = include 'settings/extensions/class-wfs-settings-tips.php';
+        $settings[] = include 'settings/extensions/class-wfs-settings-whatsapp-cart.php';
+        $settings[] = include 'settings/extensions/class-wfs-settings-delivery-zones-fees.php';
         $settings[] = include 'settings/class-wfs-settings-advanced.php';
 
         self::$settings = apply_filters( 'foodstore_get_settings_pages', $settings );

@@ -45,6 +45,12 @@ class WFS_Admin_Menus {
 
     add_submenu_page( 'wfs-settings', __( 'Layout & Styling', 'food-store' ), __( 'Layout & Styling', 'food-store' ), 'manage_woocommerce', admin_url( 'admin.php?page=wfs-settings&tab=styling' ) );
 
+    add_submenu_page( 'wfs-settings', __( 'Tips', 'food-store' ), __( 'Tips', 'food-store' ), 'manage_woocommerce', admin_url( 'admin.php?page=wfs-settings&tab=tips' ) );
+
+    add_submenu_page( 'wfs-settings', __( 'Whatsapp Cart', 'food-store' ), __( 'Whatsapp Cart', 'food-store' ), 'manage_woocommerce', admin_url( 'admin.php?page=wfs-settings&tab=whatsapp-cart' ) );
+
+    add_submenu_page( 'wfs-settings', __( 'Delivery Zones Fees', 'food-store' ), __( 'Delivery Zones Fees', 'food-store' ), 'manage_woocommerce', admin_url( 'admin.php?page=wfs-settings&tab=delivery_zones_fees' ) );
+
     add_submenu_page( 'wfs-settings', __( 'Advanced', 'food-store' ), __( 'Advanced', 'food-store' ), 'manage_woocommerce', admin_url( 'admin.php?page=wfs-settings&tab=advanced' ) );
 
   }

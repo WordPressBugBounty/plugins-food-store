@@ -217,10 +217,26 @@ class WFS_Frontend {
 
     if ( array_key_exists( 'addons', $values ) ) {
       $item->add_meta_data( '_addon_items', $values['addons'], true );
+
+      // Also save each addon as its own visible, scalar meta row so it
+      // survives WooCommerce's generic meta formatting (used by the REST
+      // API / WooCommerce mobile app), not just our custom template hooks.
+      foreach ( $values['addons'] as $addon_item ) {
+        $addon_qty   = isset( $addon_item['quantity'] ) ? $addon_item['quantity'] : 1;
+        $addon_slug  = isset( $addon_item['addon_item']['value'] ) ? $addon_item['addon_item']['value'] : '';
+        $addon_price = isset( $addon_item['price'] ) ? $addon_item['price'] : 0;
+        $addon_term  = !empty( $addon_slug ) ? get_term_by( 'slug', $addon_slug, 'product_addon' ) : false;
+
+        if ( $addon_term ) {
+          $addon_price = wfs_calculate_addon_price( $addon_price, $addon_qty );
+          $item->add_meta_data( $addon_term->name, html_entity_decode( wp_strip_all_tags( wc_price( $addon_price ) ) ), false );
+        }
+      }
     }
 
     if ( array_key_exists( 'special_note', $values ) ) {
       $item->add_meta_data( '_special_note', $values['special_note'], true );
+      $item->add_meta_data( __( 'Special Note', 'food-store' ), $values['special_note'], true );
     }
   }
 

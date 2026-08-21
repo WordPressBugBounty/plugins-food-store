@@ -1,14 +1,15 @@
 <?php
 /**
+ * Food Store plugin file.
  *
  * @author    WP Scripts <@wpscripts>
- * @package 	FoodStore
+ * @package  FoodStore
  * @license   GPL-2.0+
  *
  * @wordpress-plugin
  * Plugin Name: Food Store - Online Food Delivery & Pickup
  * Description: Food Store is complete online food ordering platform with all your favourite WooCommerce functionalities.
- * Version: 1.5.4
+ * Version: 1.5.5
  * Author: WP Scripts
  * Text Domain: food-store
  * Domain Path: /languages/
@@ -33,21 +34,21 @@ defined( 'ABSPATH' ) || exit;
 
 // Define FOOD_STORE_PLUGIN_FILE.
 if ( ! defined( 'WFS_PLUGIN_FILE' ) ) {
-  define( 'WFS_PLUGIN_FILE', __FILE__ );
+	define( 'WFS_PLUGIN_FILE', __FILE__ );
 }
 
-// include dependencies file
+// include dependencies file.
 if ( ! class_exists( 'WFS_Dependencies' ) ) {
-  include_once dirname( __FILE__) . '/includes/class-food-store-dependencies.php';
+	include_once __DIR__ . '/includes/class-food-store-dependencies.php';
 }
 
 // Include the main FoodStore class.
 if ( ! class_exists( 'FoodStore', false ) ) {
-  include_once dirname( WFS_PLUGIN_FILE ) . '/includes/class-food-store.php';
+	include_once __DIR__ . '/includes/class-food-store.php';
 }
 
-// Added plugin.php file to stop installation if WooCommerce is not activated
-require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+// Added plugin.php file to stop installation if WooCommerce is not activated.
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 /**
  * Returns the main instance of WFC.

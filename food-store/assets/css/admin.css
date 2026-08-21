@@ -315,3 +315,18 @@ body.wfs-tools-settings .foodstore-save-button {
 body .wfs-addon-category span.select2-container {
   width: 65% !important;
 }
+
+a.wfs-pro-lock-feature {
+  text-decoration: none;
+}
+
+a.wfs-pro-lock-feature:focus {
+  outline: none;
+  outline: none;
+  box-shadow: none;
+}
+
+a.wfs-pro-lock-feature span {
+  vertical-align: text-bottom;
+  padding-right: 3px;
+}
